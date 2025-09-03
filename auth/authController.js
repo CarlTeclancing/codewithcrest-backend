@@ -31,7 +31,7 @@ exports.register = async (req, res) => {
     // Insert user into DB — values wrapped in an array of arrays ✅
     await db.execute(
       'INSERT INTO users ( `email`, `password`) VALUES (?, ?)',
-      [values] //  direct flat array (7 ? marks above matches 7 values)
+      [...values] //  direct flat array (7 ? marks above matches 7 values)
     );
 
     res.status(201).json({ message: 'User registered successfully' });
