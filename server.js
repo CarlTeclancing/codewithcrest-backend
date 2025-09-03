@@ -33,6 +33,12 @@ const postRoutes = require('./routes/postRoutes')
 const commentRoutes = require('./routes/commentRoutes')
 const subscriptionRoutes = require('./routes/subscriptionRoutes')
 
+const courseRoutes = require('./routes/courseRoutes')
+const moduleRoutes = require('./routes/moduleRoutes')
+const userLabRoutes = require('./routes/userLabRoutes')
+const userChallengeRoutes = require('./routes/userChallengeRoutes')
+
+
 app.use("/api/auth" ,authRoutes)
 app.use("/api/user" ,userRoutes)
 app.use("/api/profile" ,profileRoutes)
@@ -41,6 +47,12 @@ app.use("/api/lab" ,labRoutes)
 app.use("/api/post" ,postRoutes)
 app.use("/api/comment" ,commentRoutes)
 app.use("/api/subscription" ,subscriptionRoutes)
+
+app.use("/api/user-lab" ,userLabRoutes)
+app.use("/api/user-challenge" ,userChallengeRoutes)
+app.use("/api/modules", moduleRoutes)
+app.use("/api/courses" ,courseRoutes)
+
 
 
 // Add this before app.listen()
